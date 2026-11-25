@@ -1,0 +1,17 @@
+{
+  "id": "echo-music-downloader",
+  "name": "ZQ-EchoDown",
+  "version": "1.0.0",
+  "description": "把当前播放的歌曲或整个播放队列下载到本地目录，支持音质选择、批量勾选、任务中心进度与取消。",
+  "author": "bayueqi",
+  "icon": "icon.svg",
+  "main": "index.js",
+  "capabilities": {
+    "kugouApi": true,
+    "localFiles": true,
+    "downloads": true
+  },
+  "requires": {
+    "echoMusicVersion": ">=2.3.2-beta.10"
+  }
+}
