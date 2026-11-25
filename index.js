@@ -779,23 +779,4 @@ export function activate(ctx) {
     disabled: () => !currentTrack()?.hash,
     onClick: () => downloadSong(currentTrack()),
   });
-
-  // 播放栏上的显眼入口：打开批量下载页（宿主未开放队列抽屉的插件扩展点）。
-  ctx.ui.playerbar.register({
-    id: "open-batch-download",
-    title: "批量下载",
-    icon: "tabler:download",
-    tooltip: "批量下载播放队列里的歌曲",
-    defaultPlacement: "right",
-    order: 110,
-    onClick: () => {
-      const path = `/main/plugin/${encodeURIComponent(ctx.id)}/${encodeURIComponent("batch-download")}`;
-      try {
-        const result = ctx.router?.push?.(path);
-        result?.catch?.(() => undefined);
-      } catch {
-        ctx.toast.info("请从左侧边栏打开「批量下载」");
-      }
-    },
-  });
 }
